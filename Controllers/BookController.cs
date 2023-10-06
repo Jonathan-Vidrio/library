@@ -37,6 +37,11 @@ public class BookController : Controller
             FullName = $"{a.Name} {a.PaternalSurname} {a.MaternalSurname}" 
         }).ToList();
         ViewBag.Authors = authorsList;
+        
+        int currentYear = DateTime.Now.Year;
+        List<int> years = Enumerable.Range(1900, currentYear - 1900 + 1).ToList();
+        ViewBag.Years = years;
+        
         return View();
     }
     
@@ -50,6 +55,11 @@ public class BookController : Controller
         }).ToList();
         ViewBag.Authors = authorsList;
         var book = _collection.GetBook(id);
+        
+        int currentYear = DateTime.Now.Year;
+        List<int> years = Enumerable.Range(1900, currentYear - 1900 + 1).ToList();
+        ViewBag.Years = years;
+        
         return View(book);
     }
     

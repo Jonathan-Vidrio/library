@@ -21,5 +21,5 @@ public class BookModel
     public string Editorial { get; set; }
     
     [BsonElement("publishDate")]
-    public DateTime PublishDate { get; set; }
+    public int PublishDate { get; set; }
 }
